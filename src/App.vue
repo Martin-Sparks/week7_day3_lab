@@ -1,7 +1,14 @@
 <template>
   <div class="main-container">
     <h1>Country List</h1>
-    <country-list :countries="countries"></country-list>
+    <!-- <country-list :countries="countries"></country-list> -->
+
+    <select id="country-selected" v-model="selectedCountry">
+      <option disabled-value="">Select</option>
+      <option v-for="(country, index) in countries" :key="index" :value="country"> {{country.name}}</option>
+      <country-list :countries="countries"></country-list>
+      </select>
+
     <more-details :countries="selectedCountry"></more-details>
   </div>
 </template>
