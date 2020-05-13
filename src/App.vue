@@ -1,12 +1,14 @@
 <template>
     <div class="main-container">
       <h1>Hello World!</h1>
-      
+      <country-list :countries="countries"></country-list>
     </div>
 </template>
 
 <script>
-import CountryList for '.' 
+import CountryList from './components/CountryList.vue' ;
+import MoreDetails from './components/MoreDetails.vue';
+
 export default {
   name:"app",
   data() {
@@ -22,14 +24,12 @@ export default {
   },
   components:{
     "country-list": CountryList,
+    "more-details": MoreDetails
     
   }
 
 }
 </script>
-
-
-
 
 
 <style>
